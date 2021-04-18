@@ -1,0 +1,14 @@
+{
+  "name": "game-of-life",
+  "version": "0.1.0",
+  "description": "Game of life",
+  "main": "server.js",
+  "scripts": {
+    "serve": "node server.js"
+  },
+  "author": "Vaclav Dvorak <2vd@seznam.cz>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
