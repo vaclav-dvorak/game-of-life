@@ -1,8 +1,8 @@
 const canvas = document.getElementById('gameField')
 const ctx = canvas.getContext('2d')
 
-const fieldSize = 500
-const numCells = 100
+const fieldSize = 600
+const numCells = 200
 const cellSize = fieldSize / numCells
 
 const decayColor = [

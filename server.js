@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'))
 })
 
-app.use(express.static('js'))
+app.use(express.static('static'))
 
 app.listen(port)
 console.log(`Server running on: http://localhost:${port}`)
