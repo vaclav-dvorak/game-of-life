@@ -2,13 +2,17 @@
   "name": "game-of-life",
   "version": "0.1.0",
   "description": "Game of life",
+  "start": "node server.js",
   "main": "server.js",
   "scripts": {
-    "serve": "node server.js"
+    "serve": "node -r dotenv/config server.js"
   },
   "author": "Vaclav Dvorak <2vd@seznam.cz>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
