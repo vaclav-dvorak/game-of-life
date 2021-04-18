@@ -2,7 +2,7 @@
 
 this is real simple implementation of game of life. Its just a small exercise with express.
 
-![game-of-life](https://j.gifs.com/2xzL0K.gif)
+![game-of-life](docs/example.gif)
 
 ## How to start
 
