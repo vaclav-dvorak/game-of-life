@@ -1,8 +1,13 @@
 const canvas = document.getElementById('gameField')
 const ctx = canvas.getContext('2d')
+const population = document.getElementById('pop')
+const generation = document.getElementById('gen')
 
-const fieldSize = 600
-const numCells = 200
+let genNum = 0
+let popNum = 0
+
+const fieldSize = 570
+const numCells = 190
 const cellSize = fieldSize / numCells
 
 const decayColor = [
@@ -46,9 +51,12 @@ const gameLoop = () => {
   ctx.clearRect(0, 0, fieldSize, fieldSize)
 
   // Draw all the game objects
-  for (let i = 0; i < grid.length; i++) {
-    grid[i].draw()
-  }
+  grid.forEach((cell) => {
+    cell.draw()
+  })
+
+  generation.innerHTML = ++genNum
+  population.innerHTML = popNum
 
   // The loop function has reached it's end, keep requesting new frames
   setTimeout(() => {
@@ -85,14 +93,12 @@ const checkSurrounding = () => {
     }
   }
   // Apply the new state to the cells
-  for (let i = 0; i < grid.length; i++) {
-    grid[i].alive = grid[i].nextAlive
-    grid[i].decay = grid[i].nextAlive
-      ? 6
-      : grid[i].decay > 0
-      ? grid[i].decay - 1
-      : 0
-  }
+  popNum = 0
+  grid.forEach((cell) => {
+    cell.alive = cell.nextAlive
+    cell.decay = cell.nextAlive ? 6 : cell.decay > 0 ? cell.decay - 1 : 0
+    popNum += cell.alive ? 1 : 0
+  })
 }
 
 const isAlive = (x, y) => {
