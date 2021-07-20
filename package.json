@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "serve": "node -r dotenv/config server.js",
     "heroku-postbuild": "npm run build-prod",
-    "build-prod": "NODE_ENV=production webpack --config webpack.config.js --progress"
+    "build-prod": "NODE_ENV=production webpack --config webpack.config.js"
   },
   "author": "Vaclav Dvorak <2vd@seznam.cz>",
   "license": "MIT",
