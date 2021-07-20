@@ -2,10 +2,11 @@
   "name": "game-of-life",
   "version": "0.1.0",
   "description": "Game of life",
-  "start": "node server.js",
+  "start": "node dist/server.js",
   "main": "server.js",
   "scripts": {
     "serve": "node -r dotenv/config server.js",
+    "heroku-postbuild": "npm run build-prod",
     "build-prod": "NODE_ENV=production webpack --config webpack.config.js"
   },
   "author": "Vaclav Dvorak <2vd@seznam.cz>",
