@@ -1,6 +1,6 @@
 # Conway's game of life
 
-this is real simple implementation of game of life. Its just a small exercise with express.
+this is real simple implementation of game of life. Its just a small exercise with vite.
 
 🌐website: <https://vd-game-of-life.herokuapp.com/>
 
@@ -10,7 +10,7 @@ this is real simple implementation of game of life. Its just a small exercise wi
 
 ```bash
 npm install
-npm run serve
+npm run dev
 ```
 
 ## Resources

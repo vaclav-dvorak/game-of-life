@@ -17,3 +17,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "vd-game-of-life"
           heroku_email: "2vd@seznam.cz"
+          buildpack:	https://github.com/heroku/heroku-buildpack-static.git

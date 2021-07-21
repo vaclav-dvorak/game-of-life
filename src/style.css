@@ -1,0 +1,18 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding-top: 50px;
+}
+.jumbotron {
+  padding: 48px 60px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  background-color: #eee;
+}
+.jumbotron h1 {
+  font-size: 63px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.1;
+}

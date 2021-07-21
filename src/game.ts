@@ -1,7 +1,8 @@
-const canvas = document.getElementById('gameField')
-const ctx = canvas.getContext('2d')
-const population = document.getElementById('pop')
-const generation = document.getElementById('gen')
+const canvas = document.querySelector<HTMLCanvasElement>('#gameField')!
+
+const ctx = canvas.getContext('2d')!
+const population = document.querySelector<HTMLSpanElement>('#pop')!
+const generation = document.querySelector<HTMLSpanElement>('#gen')!
 
 let genNum = 0
 let popNum = 0
@@ -20,14 +21,7 @@ const decayColor = [
   '#80ff80',
 ]
 
-const cellFce = {
-  draw: function () {
-    ctx.fillStyle = decayColor[this.decay]
-    ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize, cellSize)
-  },
-}
-
-const grid = []
+const grid: any[] = []
 
 const createGrid = () => {
   const genSize = numCells * numCells
@@ -37,7 +31,10 @@ const createGrid = () => {
       x: x % numCells,
       y: Math.floor(x / numCells),
       alive: Math.random() > 0.5,
-      ...cellFce,
+      draw: function () {
+        ctx.fillStyle = decayColor[this.decay]
+        ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize, cellSize)
+      },
     }
     grid.push(newCell)
   }
@@ -55,8 +52,8 @@ const gameLoop = () => {
     cell.draw()
   })
 
-  generation.innerHTML = ++genNum
-  population.innerHTML = popNum
+  generation.innerHTML = String(++genNum)
+  population.innerHTML = String(popNum)
 
   // The loop function has reached it's end, keep requesting new frames
   setTimeout(() => {
@@ -101,14 +98,14 @@ const checkSurrounding = () => {
   })
 }
 
-const isAlive = (x, y) => {
+const isAlive = (x: number, y: number) => {
   if (x < 0 || x >= numCells || y < 0 || y >= numCells) {
-    return false
+    return 0
   }
   return grid[gridToIndex(x, y)].alive ? 1 : 0
 }
 
-const gridToIndex = (x, y) => {
+const gridToIndex = (x: number, y: number) => {
   return x + y * numCells
 }
 
