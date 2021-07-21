@@ -48,9 +48,7 @@ const gameLoop = () => {
   ctx.clearRect(0, 0, fieldSize, fieldSize)
 
   // Draw all the game objects
-  grid.forEach((cell) => {
-    cell.draw()
-  })
+  grid.forEach((cell) => cell.draw())
 
   generation.innerHTML = String(++genNum)
   population.innerHTML = String(popNum)
@@ -93,7 +91,7 @@ const checkSurrounding = () => {
   popNum = 0
   grid.forEach((cell) => {
     cell.alive = cell.nextAlive
-    cell.decay = cell.nextAlive ? 6 : cell.decay > 0 ? cell.decay - 1 : 0
+    cell.decay = cell.alive ? 6 : cell.decay > 0 ? cell.decay - 1 : 0
     popNum += cell.alive ? 1 : 0
   })
 }
