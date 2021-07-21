@@ -1,11 +1,7 @@
 {
-  "root": "dist/",
+  "root": "./dist",
   "https_only": true,
   "clean_urls": false,
-  "logging": {
-    "access": true,
-    "error": "warn"
-  },
   "headers": {
     "/assets/**": {
       "Cache-Control": "public, max-age=512000"
