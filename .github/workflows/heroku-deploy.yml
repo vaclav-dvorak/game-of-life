@@ -12,18 +12,8 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
-      - run: npm ci
-
-      - run: npm run build
-
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "vd-game-of-life"
           heroku_email: "2vd@seznam.cz"
-          buildpack:	https://github.com/heroku/heroku-buildpack-static.git
