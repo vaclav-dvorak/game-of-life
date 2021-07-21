@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview",
-    "heroku-postbuild": "npm run build"
+    "serve": "vite preview"
   },
   "author": "Vaclav Dvorak <2vd@seznam.cz>",
   "license": "MIT",
