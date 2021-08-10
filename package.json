@@ -10,8 +10,8 @@
   "author": "Vaclav Dvorak <2vd@seznam.cz>",
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^5.0.2",
-    "typescript": "^4.3.2",
-    "vite": "^2.4.3"
+    "bootstrap": "^5.1.0",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.4"
   }
 }
