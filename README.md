@@ -16,3 +16,4 @@ npm run dev
 ## Resources
 
 Great article: <https://spicyyoghurt.com/tutorials/javascript/conways-game-of-life-canvas>
+
